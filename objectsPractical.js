@@ -34,15 +34,34 @@ console.log(isRed(card2));
 
 function isHigher(firstCard, secondCard) {
   console.log('In isHigher:', firstCard, secondCard);
+  if (firstCard.number === 1) {
+    firstCard.number = 14;
+  } //change ace
+  if (secondCard.number === 1) {
+    secondCard.number = 14;
+  } //change ace
+
   if (firstCard.number > secondCard.number) {
+    if (firstCard.number === 14) {
+      firstCard.number = 1;
+    } //change ace back
     console.log(firstCard, 'is the higher card');
     return firstCard;
   } // first higher
   else if (firstCard.number < secondCard.number) {
+    if (secondCard.number === 14) {
+      secondCard.number = 1;
+    } //change ace back
     console.log(secondCard, 'is the higher card');
     return secondCard;
   } // second higher
   else {
+    if (firstCard.number === 14) {
+      firstCard.number = 1;
+    } //change ace
+    if (secondCard.number === 14) {
+      secondCard.number = 1;
+    } //change ace
     console.log('Both cards have the same number!', firstCard, secondCard);
     return firstCard;
   } // equal
